@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8607D04A1E46789B00FC932A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8607D0491E46789B00FC932A /* MapKit.framework */; };
 		8646EF441E415D5C001DE4DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF431E415D5C001DE4DE /* AppDelegate.swift */; };
-		8646EF461E415D5C001DE4DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF451E415D5C001DE4DE /* ViewController.swift */; };
 		8646EF491E415D5C001DE4DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8646EF471E415D5C001DE4DE /* Main.storyboard */; };
 		8646EF4B1E415D5C001DE4DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8646EF4A1E415D5C001DE4DE /* Assets.xcassets */; };
 		8646EF4E1E415D5C001DE4DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8646EF4C1E415D5C001DE4DE /* LaunchScreen.storyboard */; };
 		8646EF591E415D5C001DE4DE /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF581E415D5C001DE4DE /* WorldTrotterTests.swift */; };
 		8646EF641E415D5C001DE4DE /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF631E415D5C001DE4DE /* WorldTrotterUITests.swift */; };
+		8646EF721E41678A001DE4DE /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF711E41678A001DE4DE /* ConversionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +35,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8607D0491E46789B00FC932A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8646EF401E415D5C001DE4DE /* WorldTrotter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorldTrotter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8646EF431E415D5C001DE4DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8646EF451E415D5C001DE4DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8646EF481E415D5C001DE4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8646EF4A1E415D5C001DE4DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8646EF4D1E415D5C001DE4DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		8646EF5F1E415D5C001DE4DE /* WorldTrotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTrotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8646EF631E415D5C001DE4DE /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		8646EF651E415D5C001DE4DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8646EF711E41678A001DE4DE /* ConversionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversionViewController.swift; path = ../ConversionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8607D04A1E46789B00FC932A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8607D0481E46789B00FC932A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8607D0491E46789B00FC932A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8646EF371E415D5C001DE4DE = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 				8646EF571E415D5C001DE4DE /* WorldTrotterTests */,
 				8646EF621E415D5C001DE4DE /* WorldTrotterUITests */,
 				8646EF411E415D5C001DE4DE /* Products */,
+				8607D0481E46789B00FC932A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,8 +109,8 @@
 		8646EF421E415D5C001DE4DE /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
+				8646EF711E41678A001DE4DE /* ConversionViewController.swift */,
 				8646EF431E415D5C001DE4DE /* AppDelegate.swift */,
-				8646EF451E415D5C001DE4DE /* ViewController.swift */,
 				8646EF471E415D5C001DE4DE /* Main.storyboard */,
 				8646EF4A1E415D5C001DE4DE /* Assets.xcassets */,
 				8646EF4C1E415D5C001DE4DE /* LaunchScreen.storyboard */,
@@ -259,7 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8646EF461E415D5C001DE4DE /* ViewController.swift in Sources */,
+				8646EF721E41678A001DE4DE /* ConversionViewController.swift in Sources */,
 				8646EF441E415D5C001DE4DE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +517,7 @@
 				8646EF6A1E415D5C001DE4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8646EF6B1E415D5C001DE4DE /* Build configuration list for PBXNativeTarget "WorldTrotterTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				8646EF6D1E415D5C001DE4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8646EF6E1E415D5C001DE4DE /* Build configuration list for PBXNativeTarget "WorldTrotterUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				8646EF701E415D5C001DE4DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
