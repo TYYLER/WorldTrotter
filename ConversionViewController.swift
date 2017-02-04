@@ -42,7 +42,11 @@ class ConversionViewController: UIViewController{
     {
         super.viewDidLoad()
         //
+        
+        print("ConversionViewController loaded its view")
+        
         updateCelsiusLabel()
+        
     }
     
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField)
@@ -91,7 +95,16 @@ class ConversionViewController: UIViewController{
     }
     
     
+    //Silver Challange : Dark Mode
     
+    override func viewWillAppear(_ animated: Bool) {
+        let hour = Calendar.current.component(.hour, from: Date())
+        if (hour > 18 || hour < 6) {
+            view.backgroundColor = UIColor.darkGray
+        } else {
+            view.backgroundColor = UIColor.lightGray
+        }
+    }
     
     
     

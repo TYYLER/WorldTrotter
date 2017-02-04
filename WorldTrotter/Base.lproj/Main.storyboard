@@ -94,7 +94,7 @@
         <!--Map-->
         <scene sceneID="2zI-pz-ZSK">
             <objects>
-                <viewController id="Ige-2P-20n" sceneMemberID="viewController">
+                <viewController id="Ige-2P-20n" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eBp-ot-6py"/>
                         <viewControllerLayoutGuide type="bottom" id="Osy-x1-Fjw"/>
