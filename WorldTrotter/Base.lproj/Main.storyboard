@@ -94,25 +94,14 @@
         <!--Map-->
         <scene sceneID="2zI-pz-ZSK">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Rs-kg-mCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Ige-2P-20n" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eBp-ot-6py"/>
-                        <viewControllerLayoutGuide type="bottom" id="Osy-x1-Fjw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OFH-w0-PG4">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="r56-7t-5Xz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-VT-1dJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="D8u-Cp-pgb"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Rs-kg-mCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072.8" y="389.95502248875567"/>
         </scene>
