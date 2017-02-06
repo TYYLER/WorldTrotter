@@ -28,19 +28,19 @@
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKC-ye-vwe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKC-ye-vwe">
                                 <rect key="frame" x="129" y="232" width="117" height="84"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="70"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-D0-212">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees celsius" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaE-D0-212">
                                 <rect key="frame" x="50" y="324" width="275" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-cX-Nr9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8M0-cX-Nr9">
                                 <rect key="frame" x="122" y="176" width="131" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -66,10 +66,18 @@
                             <constraint firstItem="RaE-D0-212" firstAttribute="top" secondItem="fKC-ye-vwe" secondAttribute="bottom" constant="8" id="2Fj-Wa-y3V"/>
                             <constraint firstItem="PcS-Ia-TNJ" firstAttribute="top" secondItem="xgL-BL-4H4" secondAttribute="bottom" constant="8" id="BwI-r7-vgb"/>
                             <constraint firstItem="8M0-cX-Nr9" firstAttribute="top" secondItem="PcS-Ia-TNJ" secondAttribute="bottom" constant="8" id="Cfx-tF-5Dw"/>
+                            <constraint firstItem="8M0-cX-Nr9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JoC-OU-CZj"/>
                             <constraint firstItem="fKC-ye-vwe" firstAttribute="top" secondItem="8M0-cX-Nr9" secondAttribute="bottom" constant="8" id="Lr8-8i-DQE"/>
                             <constraint firstItem="xgL-BL-4H4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="UxP-ee-4DH"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="xgL-BL-4H4" secondAttribute="trailing" id="Vco-9j-KSt"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="fKC-ye-vwe" secondAttribute="trailing" id="XPp-hJ-0LW"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="RaE-D0-212" secondAttribute="trailing" id="b9i-ji-BW4"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="8M0-cX-Nr9" secondAttribute="trailing" id="bYj-8z-z3i"/>
                             <constraint firstItem="RaE-D0-212" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cbi-nG-yY2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="PcS-Ia-TNJ" secondAttribute="trailing" constant="2" id="idZ-Jh-tzJ"/>
+                            <constraint firstItem="xgL-BL-4H4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="j4a-3h-hoc"/>
+                            <constraint firstItem="fKC-ye-vwe" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="j5h-QT-LI7"/>
+                            <constraint firstItem="RaE-D0-212" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oO4-1g-2Mb"/>
                             <constraint firstItem="PcS-Ia-TNJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="p4L-4A-Fwc"/>
                             <constraint firstItem="8M0-cX-Nr9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="p6x-r1-Aiq"/>
                             <constraint firstItem="PcS-Ia-TNJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pcD-gl-b8z"/>
