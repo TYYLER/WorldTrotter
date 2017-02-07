@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController {
     var mapView: MKMapView!
@@ -24,7 +25,6 @@ class MapViewController: UIViewController {
         let segmentedControl = UISegmentedControl( items: [standardString, satelliteString, hybridString])
 
         
-        
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent( 0.5)
         segmentedControl.selectedSegmentIndex = 0
         
@@ -32,6 +32,9 @@ class MapViewController: UIViewController {
 
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview( segmentedControl)
+        
+        
+        
         
         let topConstraint = segmentedControl.topAnchor.constraint( equalTo: topLayoutGuide.bottomAnchor, constant: 8)
         let margins = view.layoutMarginsGuide
@@ -48,6 +51,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
             super.viewDidLoad()
             print(" MapViewController loaded its view.")
+        
     }
     
     func mapTypeChanged(_ segControl: UISegmentedControl) {

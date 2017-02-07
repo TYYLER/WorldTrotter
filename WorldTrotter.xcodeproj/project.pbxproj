@@ -17,6 +17,7 @@
 		8646EF641E415D5C001DE4DE /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF631E415D5C001DE4DE /* WorldTrotterUITests.swift */; };
 		8646EF721E41678A001DE4DE /* ConversionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8646EF711E41678A001DE4DE /* ConversionViewController.swift */; };
 		86D8C8401E493A5D00B64F23 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86D8C8421E493A5D00B64F23 /* Localizable.strings */; };
+		86D8C8461E49545400B64F23 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8C8451E49545400B64F23 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		86D8C8411E493A5D00B64F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		86D8C8431E493A6200B64F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		86D8C8441E493A6300B64F23 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		86D8C8451E49545400B64F23 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				8646EF711E41678A001DE4DE /* ConversionViewController.swift */,
 				8607D04B1E46804000FC932A /* MapViewController.swift */,
+				86D8C8451E49545400B64F23 /* WebViewController.swift */,
 				86D8C8421E493A5D00B64F23 /* Localizable.strings */,
 				8646EF431E415D5C001DE4DE /* AppDelegate.swift */,
 				8646EF471E415D5C001DE4DE /* Main.storyboard */,
@@ -285,6 +288,7 @@
 				8646EF721E41678A001DE4DE /* ConversionViewController.swift in Sources */,
 				8607D04C1E46804000FC932A /* MapViewController.swift in Sources */,
 				8646EF441E415D5C001DE4DE /* AppDelegate.swift in Sources */,
+				86D8C8461E49545400B64F23 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

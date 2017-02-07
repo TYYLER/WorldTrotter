@@ -100,7 +100,17 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="282" y="-287"/>
+            <point key="canvasLocation" x="134" y="-329"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="gKm-0M-uKK">
+            <objects>
+                <viewController title="Web" id="4Se-Lh-aQK" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Web" id="DAp-zJ-SFH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILb-Sl-mDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1080.8" y="-329.68515742128938"/>
         </scene>
         <!--Map-->
         <scene sceneID="2zI-pz-ZSK">
@@ -114,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Rs-kg-mCm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="389.95502248875567"/>
+            <point key="canvasLocation" x="1082" y="390"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="o0p-y4-Jfd">
@@ -129,6 +139,7 @@
                     <connections>
                         <segue destination="Ige-2P-20n" kind="relationship" relationship="viewControllers" id="jOG-v0-xEK"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="44c-Cx-SS7"/>
+                        <segue destination="4Se-Lh-aQK" kind="relationship" relationship="viewControllers" id="mOL-Ua-sv5"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxH-P1-MhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
