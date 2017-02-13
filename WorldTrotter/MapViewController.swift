@@ -8,12 +8,12 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
 class MapViewController: UIViewController {
     var mapView: MKMapView!
     
     override func loadView(){
+        
         mapView = MKMapView()
         
         view = mapView
@@ -33,9 +33,6 @@ class MapViewController: UIViewController {
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview( segmentedControl)
         
-        
-        
-        
         let topConstraint = segmentedControl.topAnchor.constraint( equalTo: topLayoutGuide.bottomAnchor, constant: 8)
         let margins = view.layoutMarginsGuide
         let leadingConstraint = segmentedControl.leadingAnchor.constraint( equalTo: margins.leadingAnchor)
@@ -44,8 +41,6 @@ class MapViewController: UIViewController {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
-        
-
     }
     
     override func viewDidLoad() {

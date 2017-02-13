@@ -45,12 +45,10 @@ class ConversionViewController: UIViewController{
         print("ConversionViewController loaded its view")
         
         updateCelsiusLabel()
-        
     }
     
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField)
     {
-
         if let text = textField.text, let number = numberFormatter.number(from: text){
             fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }
@@ -76,9 +74,6 @@ class ConversionViewController: UIViewController{
         }
     }
     
-
-    
-    
     func textField(_ textField:UITextField,shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
 
         let currentLocale = Locale.current
@@ -95,7 +90,6 @@ class ConversionViewController: UIViewController{
         }
     }
     
-    
     //Silver Challange : Dark Mode
     
     override func viewWillAppear(_ animated: Bool) {
@@ -106,14 +100,4 @@ class ConversionViewController: UIViewController{
             view.backgroundColor = UIColor.lightGray
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
