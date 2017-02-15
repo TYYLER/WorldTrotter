@@ -15,7 +15,6 @@ class MapViewController: UIViewController {
     override func loadView(){
         
         mapView = MKMapView()
-        
         view = mapView
         
         let standardString = NSLocalizedString("Standard", comment: "Standard map view")
@@ -23,13 +22,9 @@ class MapViewController: UIViewController {
         let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
         
         let segmentedControl = UISegmentedControl( items: [standardString, satelliteString, hybridString])
-
-        
         segmentedControl.backgroundColor = UIColor.white.withAlphaComponent( 0.5)
         segmentedControl.selectedSegmentIndex = 0
-        
         segmentedControl.addTarget( self, action: #selector( MapViewController.mapTypeChanged(_:)), for: .valueChanged)
-
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview( segmentedControl)
         
@@ -41,6 +36,40 @@ class MapViewController: UIViewController {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
+        
+        
+        let locateMeButton = UIButton(frame: CGRect(x: 20, y: 70, width: 100, height: 30))
+        locateMeButton.backgroundColor = .blue
+        locateMeButton.alpha = 0.7
+        locateMeButton.layer.cornerRadius = 5
+        locateMeButton.layer.borderWidth = 1
+        locateMeButton.layer.borderColor = UIColor.blue.cgColor
+        locateMeButton.addTarget(self, action: #selector(locateMeButtonTapped), for: .touchUpInside)
+        locateMeButton.setTitle("Locate Me", for: .normal)
+        view.addSubview(locateMeButton)
+        
+        let pinButton = UIButton(frame: CGRect(x: 250, y: 70, width: 100, height: 30))
+        pinButton.backgroundColor = .blue
+        pinButton.alpha = 0.7
+        pinButton.layer.cornerRadius = 5
+        pinButton.layer.borderWidth = 1
+        pinButton.layer.borderColor = UIColor.blue.cgColor
+        pinButton.addTarget(self, action: #selector(pinButtonTapped), for: .touchUpInside)
+        pinButton.setTitle("Pin", for: .normal)
+        view.addSubview(pinButton)
+        
+        
+    }
+    
+    func locateMeButtonTapped(button: UIButton)
+    {
+    
+        
+    }
+    func pinButtonTapped(button: UIButton)
+    {
+        
+        
     }
     
     override func viewDidLoad() {
