@@ -43,7 +43,6 @@ class MapViewController: UIViewController {
         locateMeButton.alpha = 0.7
         locateMeButton.layer.cornerRadius = 5
         locateMeButton.layer.borderWidth = 1
-        locateMeButton.layer.borderColor = UIColor.blue.cgColor
         locateMeButton.addTarget(self, action: #selector(locateMeButtonTapped), for: .touchUpInside)
         locateMeButton.setTitle("Locate Me", for: .normal)
         view.addSubview(locateMeButton)
@@ -53,7 +52,6 @@ class MapViewController: UIViewController {
         pinButton.alpha = 0.7
         pinButton.layer.cornerRadius = 5
         pinButton.layer.borderWidth = 1
-        pinButton.layer.borderColor = UIColor.blue.cgColor
         pinButton.addTarget(self, action: #selector(pinButtonTapped), for: .touchUpInside)
         pinButton.setTitle("Pin 1", for: .normal)
         view.addSubview(pinButton)
