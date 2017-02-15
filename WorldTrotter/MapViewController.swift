@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
         trailingConstraint.isActive = true
         
         
-        let locateMeButton = UIButton(frame: CGRect(x: 20, y: 70, width: 100, height: 30))
+        let locateMeButton = UIButton(frame: CGRect(x: 20, y: 580, width: 100, height: 30))
         locateMeButton.backgroundColor = .blue
         locateMeButton.alpha = 0.7
         locateMeButton.layer.cornerRadius = 5
@@ -48,28 +48,59 @@ class MapViewController: UIViewController {
         locateMeButton.setTitle("Locate Me", for: .normal)
         view.addSubview(locateMeButton)
         
-        let pinButton = UIButton(frame: CGRect(x: 250, y: 70, width: 100, height: 30))
+        let pinButton = UIButton(frame: CGRect(x: 250, y: 580, width: 100, height: 30))
         pinButton.backgroundColor = .blue
         pinButton.alpha = 0.7
         pinButton.layer.cornerRadius = 5
         pinButton.layer.borderWidth = 1
         pinButton.layer.borderColor = UIColor.blue.cgColor
         pinButton.addTarget(self, action: #selector(pinButtonTapped), for: .touchUpInside)
-        pinButton.setTitle("Pin", for: .normal)
+        pinButton.setTitle("Pin 1", for: .normal)
         view.addSubview(pinButton)
         
         
     }
     
+    var locateMeBool:Bool = true
     func locateMeButtonTapped(button: UIButton)
     {
-    
+        print("Locate Me Button Tapped")
+        
+        if locateMeBool == true
+        {
+            print(" Locating User")
+            button.setTitle("Default", for: .normal)
+            locateMeBool = false
+            
+        }
+        else{
+            print(" Original Location")
+            button.setTitle("Locate Me", for: .normal)
+            locateMeBool = true
+        }
         
     }
+    
+    var pinNum:Int = 0
+    
     func pinButtonTapped(button: UIButton)
     {
-        
-        
+        print("Pin Button Tapped")
+        if pinNum == 0 {
+            print(" Pin 1")
+            button.setTitle("Pin 2", for: .normal)
+            pinNum = 1
+        }
+        else if pinNum == 1 {
+            print(" Pin 2")
+            button.setTitle("Pin 3", for: .normal)
+            pinNum = 2
+        }
+        else {
+            print(" Pin 3")
+            button.setTitle("Pin 1", for: .normal)
+            pinNum = 0
+        }
     }
     
     override func viewDidLoad() {

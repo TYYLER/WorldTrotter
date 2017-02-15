@@ -38,8 +38,7 @@ class ConversionViewController: UIViewController{
     }()
     
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         print("ConversionViewController loaded its view")
@@ -47,8 +46,7 @@ class ConversionViewController: UIViewController{
         updateCelsiusLabel()
     }
     
-    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField)
-    {
+    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField){
         if let text = textField.text, let number = numberFormatter.number(from: text){
             fahrenheitValue = Measurement(value: number.doubleValue, unit: .fahrenheit)
         }
@@ -57,8 +55,7 @@ class ConversionViewController: UIViewController{
         }
     }
     
-    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer)
-    {
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer){
         textField.resignFirstResponder()
     }
     
@@ -91,7 +88,6 @@ class ConversionViewController: UIViewController{
     }
     
     //Silver Challange : Dark Mode
-    
     override func viewWillAppear(_ animated: Bool) {
         let hour = Calendar.current.component(.hour, from: Date())
         if (hour > 18 || hour < 6) {
