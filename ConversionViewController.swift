@@ -61,12 +61,10 @@ class ConversionViewController: UIViewController{
     
     func updateCelsiusLabel()
     {
-        if let celsiusValue = celsiusValue
-        {
+        if let celsiusValue = celsiusValue{
             celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
         }
-        else
-        {
+        else{
             celsiusLabel.text = "???"
         }
     }
@@ -87,8 +85,14 @@ class ConversionViewController: UIViewController{
         }
     }
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        darkMode()
+    }
+    
     //Silver Challange : Dark Mode
-    override func viewWillAppear(_ animated: Bool) {
+    func darkMode()
+    {
         let hour = Calendar.current.component(.hour, from: Date())
         if (hour > 18 || hour < 6) {
             view.backgroundColor = UIColor.darkGray

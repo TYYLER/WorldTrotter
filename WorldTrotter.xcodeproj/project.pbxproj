@@ -118,8 +118,8 @@
 		8646EF421E415D5C001DE4DE /* WorldTrotter */ = {
 			isa = PBXGroup;
 			children = (
-				8646EF711E41678A001DE4DE /* ConversionViewController.swift */,
 				8607D04B1E46804000FC932A /* MapViewController.swift */,
+				8646EF711E41678A001DE4DE /* ConversionViewController.swift */,
 				86D8C8451E49545400B64F23 /* WebViewController.swift */,
 				86D8C8421E493A5D00B64F23 /* Localizable.strings */,
 				8646EF431E415D5C001DE4DE /* AppDelegate.swift */,

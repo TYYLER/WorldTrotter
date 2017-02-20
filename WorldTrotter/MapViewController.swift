@@ -9,14 +9,56 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController,MKMapViewDelegate
+{
     var mapView: MKMapView!
+    var locationManager: CLLocationManager!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        print(" MapViewController loaded its view.")
+        
+    }
     override func loadView(){
         
         mapView = MKMapView()
+        locationManager = CLLocationManager()
         view = mapView
+        locationManager.requestAlwaysAuthorization()
         
+        setupSegmentedControl()
+        setupLocateMeButton()
+        setupPinButton()
+    }
+    
+    
+    func setupLocateMeButton()
+    {
+        let locateMeButton = UIButton(frame: CGRect(x: 20, y: 580, width: 100, height: 30))
+        locateMeButton.backgroundColor = .blue
+        locateMeButton.alpha = 0.7
+        locateMeButton.layer.cornerRadius = 5
+        locateMeButton.layer.borderWidth = 1
+        locateMeButton.addTarget(self, action: #selector(MapViewController.locateMeButtonTapped(button:)), for: .touchUpInside)
+        locateMeButton.setTitle("Locate Me", for: .normal)
+        view.addSubview(locateMeButton)
+    }
+    
+    func setupPinButton()
+    {
+        let pinButton = UIButton(frame: CGRect(x: 250, y: 580, width: 100, height: 30))
+        pinButton.backgroundColor = .blue
+        pinButton.alpha = 0.7
+        pinButton.layer.cornerRadius = 5
+        pinButton.layer.borderWidth = 1
+        pinButton.addTarget(self, action: #selector(pinButtonTapped), for: .touchUpInside)
+        pinButton.setTitle("Pin 1", for: .normal)
+        view.addSubview(pinButton)
+    }
+    
+    func setupSegmentedControl()
+    {
         let standardString = NSLocalizedString("Standard", comment: "Standard map view")
         let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
         let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
@@ -36,27 +78,6 @@ class MapViewController: UIViewController {
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
-        
-        
-        let locateMeButton = UIButton(frame: CGRect(x: 20, y: 580, width: 100, height: 30))
-        locateMeButton.backgroundColor = .blue
-        locateMeButton.alpha = 0.7
-        locateMeButton.layer.cornerRadius = 5
-        locateMeButton.layer.borderWidth = 1
-        locateMeButton.addTarget(self, action: #selector(locateMeButtonTapped), for: .touchUpInside)
-        locateMeButton.setTitle("Locate Me", for: .normal)
-        view.addSubview(locateMeButton)
-        
-        let pinButton = UIButton(frame: CGRect(x: 250, y: 580, width: 100, height: 30))
-        pinButton.backgroundColor = .blue
-        pinButton.alpha = 0.7
-        pinButton.layer.cornerRadius = 5
-        pinButton.layer.borderWidth = 1
-        pinButton.addTarget(self, action: #selector(pinButtonTapped), for: .touchUpInside)
-        pinButton.setTitle("Pin 1", for: .normal)
-        view.addSubview(pinButton)
-        
-        
     }
     
     var locateMeBool:Bool = true
@@ -64,15 +85,23 @@ class MapViewController: UIViewController {
     {
         print("Locate Me Button Tapped")
         
-        if locateMeBool == true
-        {
+        if locateMeBool == true{
             print(" Locating User")
+        
+            locationManager.requestWhenInUseAuthorization()
+            
+            mapView.delegate = self
+            mapView.showsUserLocation = true
+            mapView.setUserTrackingMode(.follow,animated: true)
+
             button.setTitle("Default", for: .normal)
             locateMeBool = false
-            
         }
         else{
             print(" Original Location")
+            
+            mapView.showsUserLocation = false
+            
             button.setTitle("Locate Me", for: .normal)
             locateMeBool = true
         }
@@ -80,7 +109,6 @@ class MapViewController: UIViewController {
     }
     
     var pinNum:Int = 0
-    
     func pinButtonTapped(button: UIButton)
     {
         print("Pin Button Tapped")
@@ -101,16 +129,9 @@ class MapViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-            super.viewDidLoad()
-            print(" MapViewController loaded its view.")
-        
-    }
-    
     func mapTypeChanged(_ segControl: UISegmentedControl) {
         
-        switch segControl.selectedSegmentIndex
-        {
+        switch segControl.selectedSegmentIndex{
         case 0:
             mapView.mapType = .standard
         case 1:
@@ -120,5 +141,4 @@ class MapViewController: UIViewController {
         default: break
         }
     }
-    
 }

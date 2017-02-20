@@ -14,7 +14,13 @@ class WebViewController: UIViewController{
     
     var webView : WKWebView!
     
-    override func loadView() {
+    override func loadView()
+    {
+        setupWebPage()
+    }
+    
+    func setupWebPage()
+    {
         webView = WKWebView();
         view = webView;
         
