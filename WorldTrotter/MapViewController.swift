@@ -23,9 +23,11 @@ class MapViewController: UIViewController,MKMapViewDelegate
     override func loadView(){
         
         mapView = MKMapView()
-        locationManager = CLLocationManager()
         view = mapView
+        
+        locationManager = CLLocationManager()
         locationManager.requestAlwaysAuthorization()
+        
         
         setupSegmentedControl()
         setupLocateMeButton()
@@ -81,19 +83,27 @@ class MapViewController: UIViewController,MKMapViewDelegate
     }
     
     var locateMeBool:Bool = true
+    var didSetDefault:Bool = false
+    var originalRegion : MKCoordinateRegion!
     func locateMeButtonTapped(button: UIButton)
     {
         print("Locate Me Button Tapped")
         
+        if didSetDefault == false
+        {
+            originalRegion = mapView.region
+            didSetDefault = true
+        }
+    
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    
         if locateMeBool == true{
             print(" Locating User")
-        
-            locationManager.requestWhenInUseAuthorization()
-            
-            mapView.delegate = self
+    
             mapView.showsUserLocation = true
             mapView.setUserTrackingMode(.follow,animated: true)
-
+        
             button.setTitle("Default", for: .normal)
             locateMeBool = false
         }
@@ -101,6 +111,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
             print(" Original Location")
             
             mapView.showsUserLocation = false
+            mapView.setRegion(originalRegion, animated: true)
             
             button.setTitle("Locate Me", for: .normal)
             locateMeBool = true
