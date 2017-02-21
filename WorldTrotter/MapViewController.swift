@@ -5,6 +5,7 @@
 //  Created by Tyler Bailey on 2/4/17.
 //  Copyright © 2017 Tyler Bailey. All rights reserved.
 //
+//NOTE: Everything except Default User location works
 
 import UIKit
 import MapKit
@@ -16,25 +17,22 @@ class MapViewController: UIViewController,MKMapViewDelegate
     var locateMeBool:Bool = true
     var pinNum:Int = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
+    //Setup and View has loaded
     override func loadView(){
         mapView = MKMapView()
         view = mapView
-        
         locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
         
+        locationManager.requestAlwaysAuthorization()
         mapView.showsUserLocation = true
 
+        //Setup UI Elements
         setupPins()
         setupSegmentedControl()
         setupLocateMeButton()
         setupPinButton()
     }
-    
+    //Setup the default pins and plot on map
     func setupPins()
     {
         let hpu = MKPointAnnotation()
@@ -49,7 +47,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
         mapView.addAnnotation(home)
         mapView.addAnnotation(peir)
     }
-    
+    //Setup Locate me button
     func setupLocateMeButton()
     {
         let locateMeButton = UIButton(frame: CGRect(x: 20, y: 580, width: 100, height: 30))
@@ -62,6 +60,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
         view.addSubview(locateMeButton)
     }
     
+    //Setup the pin button
     func setupPinButton()
     {
         let pinButton = UIButton(frame: CGRect(x: 250, y: 580, width: 100, height: 30))
@@ -73,7 +72,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
         pinButton.setTitle("Pin 1", for: .normal)
         view.addSubview(pinButton)
     }
-    
+    //Setup Segmented control
     func setupSegmentedControl()
     {
         let standardString = NSLocalizedString("Standard", comment: "Standard map view")
@@ -87,6 +86,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview( segmentedControl)
         
+        //Setup constraints
         let topConstraint = segmentedControl.topAnchor.constraint( equalTo: topLayoutGuide.bottomAnchor, constant: 8)
         let margins = view.layoutMarginsGuide
         let leadingConstraint = segmentedControl.leadingAnchor.constraint( equalTo: margins.leadingAnchor)
@@ -97,12 +97,16 @@ class MapViewController: UIViewController,MKMapViewDelegate
         trailingConstraint.isActive = true
     }
     
+
+    
+    //Locate me / Default Button Clicked
+    //Cycles between default location and
     func locateMeButtonTapped(button: UIButton)
     {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     
-        //Locating User
+        //Locate User
         if locateMeBool == true{
             mapView.setUserTrackingMode(.follow,animated: true)
         
@@ -118,12 +122,14 @@ class MapViewController: UIViewController,MKMapViewDelegate
         
     }
     
+    //Pin Button Clicked
+    //Cycles through the preset pins
     func pinButtonTapped(button: UIButton)
     {
         var center : CLLocationCoordinate2D!
         var region : MKCoordinateRegion!
         
-        //Pin 1
+        //Pin 1 - HPU
         if pinNum == 0 {
             center = CLLocationCoordinate2DMake(35.973233, -79.995040)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
@@ -132,7 +138,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
             button.setTitle("Pin 2", for: .normal)
             pinNum = 1
         }
-        //Pin 2
+        //Pin 2 - HOME
         else if pinNum == 1 {
             center = CLLocationCoordinate2DMake(38.920939, -76.581784)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
@@ -141,7 +147,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
             button.setTitle("Pin 3", for: .normal)
             pinNum = 2
         }
-        //Pin 3
+        //Pin 3 - THE PEIR
         else {
             center = CLLocationCoordinate2DMake(26.131555, -81.807494)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
@@ -151,7 +157,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
             pinNum = 0
         }
     }
-    
+    //Type of map changed
     func mapTypeChanged(_ segControl: UISegmentedControl) {
         
         switch segControl.selectedSegmentIndex{
