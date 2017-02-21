@@ -13,20 +13,14 @@ class MapViewController: UIViewController,MKMapViewDelegate
 {
     var mapView: MKMapView!
     var locationManager: CLLocationManager!
-    var originalRegion : MKCoordinateRegion!
+    var locateMeBool:Bool = true
+    var pinNum:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print(" MapViewController loaded its view.")
-        
     }
     
     override func loadView(){
-        
-        print("Load View")
-        
         mapView = MKMapView()
         view = mapView
         
@@ -34,8 +28,15 @@ class MapViewController: UIViewController,MKMapViewDelegate
         locationManager.requestAlwaysAuthorization()
         
         mapView.showsUserLocation = true
-        originalRegion = mapView.region
-        
+
+        setupPins()
+        setupSegmentedControl()
+        setupLocateMeButton()
+        setupPinButton()
+    }
+    
+    func setupPins()
+    {
         let hpu = MKPointAnnotation()
         let home = MKPointAnnotation()
         let peir = MKPointAnnotation()
@@ -47,13 +48,7 @@ class MapViewController: UIViewController,MKMapViewDelegate
         mapView.addAnnotation(hpu)
         mapView.addAnnotation(home)
         mapView.addAnnotation(peir)
-        
-        
-        setupSegmentedControl()
-        setupLocateMeButton()
-        setupPinButton()
     }
-    
     
     func setupLocateMeButton()
     {
@@ -102,26 +97,20 @@ class MapViewController: UIViewController,MKMapViewDelegate
         trailingConstraint.isActive = true
     }
     
-    var locateMeBool:Bool = true
     func locateMeButtonTapped(button: UIButton)
     {
-        print("Locate Me Button Tapped")
-        
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     
+        //Locating User
         if locateMeBool == true{
-            print(" Locating User")
-    
             mapView.setUserTrackingMode(.follow,animated: true)
         
             button.setTitle("Default", for: .normal)
             locateMeBool = false
         }
+        //Original location
         else{
-            print(" Original Location")
-
-            mapView.setRegion(originalRegion, animated: true)
             
             button.setTitle("Locate Me", for: .normal)
             locateMeBool = true
@@ -129,17 +118,13 @@ class MapViewController: UIViewController,MKMapViewDelegate
         
     }
     
-    var pinNum:Int = 0
-    
     func pinButtonTapped(button: UIButton)
     {
         var center : CLLocationCoordinate2D!
         var region : MKCoordinateRegion!
         
-        print("Pin Button Tapped")
+        //Pin 1
         if pinNum == 0 {
-            print(" Pin 1")
-            
             center = CLLocationCoordinate2DMake(35.973233, -79.995040)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
             mapView.setRegion(region, animated: true)
@@ -147,9 +132,8 @@ class MapViewController: UIViewController,MKMapViewDelegate
             button.setTitle("Pin 2", for: .normal)
             pinNum = 1
         }
+        //Pin 2
         else if pinNum == 1 {
-            print(" Pin 2")
-            
             center = CLLocationCoordinate2DMake(38.920939, -76.581784)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
             mapView.setRegion(region, animated: true)
@@ -157,9 +141,8 @@ class MapViewController: UIViewController,MKMapViewDelegate
             button.setTitle("Pin 3", for: .normal)
             pinNum = 2
         }
+        //Pin 3
         else {
-            print(" Pin 3")
-            
             center = CLLocationCoordinate2DMake(26.131555, -81.807494)
             region = MKCoordinateRegionMakeWithDistance(center, 500.0, 500.0)
             mapView.setRegion(region, animated: true)
